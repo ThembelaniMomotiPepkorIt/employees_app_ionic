@@ -1,12 +1,12 @@
     <!-- add the directive ionion-cover-header to your ion-pane or ion-view, the parameter is the height in pixels when the header bar should be fully opaque (default 200)-->
-    <ion-view class="playstore" ion-cover-header="120">
+    <ion-view class="playstore" ion-cover-header="120" >
 
       <!-- regular ionic header bar -->
-      <ion-header-bar class="bar-balanced playstore-header">
+      <ion-header-bar class="bar-stable playstore-header">
         <div class="buttons">
-          <a class="button button-icon ion-arrow-left-c" ui-sref="home"></a>
+          <a class="button button-icon ion-arrow-left-c" ui-sref="main.emps"></a>
         </div>
-        <h1 class="title">{{profile.name}}</h1>
+        <h1 class="title">Employee Details</h1>
         <div class="buttons">
           <a class="button button-icon ion-ios-search"></a>
           <a class="button button-icon ion-android-more-vertical"></a>
@@ -15,17 +15,28 @@
       <!-- end of ionic header bar -->
 
       <ion-content>
-        <img class="cover-img" src="img/facebook_cover.jpg"/>
+        <img class="cover-img" ng-src="../img/Dim12_logo.png"/>
 
         <div class="row">
-          <div class="col">
-            <img class="logo-img" src="img/facebook_logo.png"/>
+          <div class="col" >
+            <img class="logo-img" ng-src="../img/{{profile.shortname}}_tn.jpg"/>
           </div>
-          <div class="col col-75">
-            <b>Facebook</b><br />
-            Facebook<br />
-            Social
+          <div class="col col-75 ">
+            <p><b>{{profile.name}}</b></p>
+            <p>{{profile.bio}}</p>
+            <p>{{profile.email}}</p>
+            <p>{{profile.telephone}}</p>
+          </div>    
+        </div>
+        
+        <div class="row">
+          <div class="col">
+            <div>
+              <button class="button icon-left ion-email button-positive">Send Message</button>
+
+            </div>
           </div>
         </div>
+
       </ion-content>
     </ion-view>

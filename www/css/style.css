@@ -1,1 +1,10 @@
-/* Empty. Add your own CSS if you like */
+body {
+	border-image: 
+	background-image: url("../img/Wood-Background-Pictures-Free-Download.jpg");
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    width: auto\9; /* ie8 */
+}

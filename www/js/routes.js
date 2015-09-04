@@ -8,7 +8,7 @@ angular.module('starter.routes', ['ionic'])
 		$state.go('main.emps');
 	});*/
 
-	$urlRouterProvider.otherwise('main/dash');
+	$urlRouterProvider.otherwise('main/emps');
 
 	$stateProvider
 		
@@ -38,7 +38,7 @@ angular.module('starter.routes', ['ionic'])
 			
 		})
 		.state('main.profile', {
-			url: 'main/profile', 
+			url: 'main/profile/:empShortname', 
 			views : {
 				'mainContent' : {
 					templateUrl : 'templates/profile.html',

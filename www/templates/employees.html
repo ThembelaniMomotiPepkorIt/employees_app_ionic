@@ -1,5 +1,6 @@
 <ion-view view-title="Dashboard" name="emp-view">
-	<ion-header-bar class="bar bar-subheader item-input-inset">
+	<ion-header-bar class="bar bar-positive bar-subheader item-input-inset">
+        
         <label class="item-input-wrapper">
             <i class="icon ion-ios7-search placeholder-icon"></i>
             <input id="searchKey" type="search" placeholder="Search" ng-model="search.$" autocorrect="off" >
@@ -9,24 +10,21 @@
 	</ion-header-bar>
 
 	<ion-content class="padding has header" >
-		
+		<div>
+			
+			
+		</div>
 		<div class="list">
 
 			<ul>
-				<li ng-repeat ="employee in employees">
-					<a class="item item-thumbnail-left" ui-sref="main.profile">
-      				<img ng-src="../img/{{employee.shortname}}_tn.jpg" alt="{{employee.shortname}}">
-      				<h2>{{employee.name}}</h2>
-     				 <p>{{employee.bio}}</p>
+				<li ng-repeat ="employee in employees" filter="{{search}}">
+					<a class="item item-thumbnail-left" ui-sref="main.profile({ empShortname: employee.shortname})">
+      					<img ng-src="../img/{{employee.shortname}}_tn.jpg" alt="{{employee.shortname}}">
+      					<h2>{{employee.name}}</h2>
+     				 	<p>{{employee.bio}}</p>
    					 </a>
 				</li>
 			</ul>
-    
-
-   
-
-</div>
-
+ 		</div>
 	</ion-content>
-
 </ion-view>
