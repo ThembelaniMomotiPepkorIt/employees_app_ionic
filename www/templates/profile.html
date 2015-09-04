@@ -1,0 +1,31 @@
+    <!-- add the directive ionion-cover-header to your ion-pane or ion-view, the parameter is the height in pixels when the header bar should be fully opaque (default 200)-->
+    <ion-view class="playstore" ion-cover-header="120">
+
+      <!-- regular ionic header bar -->
+      <ion-header-bar class="bar-balanced playstore-header">
+        <div class="buttons">
+          <a class="button button-icon ion-arrow-left-c" ui-sref="home"></a>
+        </div>
+        <h1 class="title">{{profile.name}}</h1>
+        <div class="buttons">
+          <a class="button button-icon ion-ios-search"></a>
+          <a class="button button-icon ion-android-more-vertical"></a>
+        </div>
+      </ion-header-bar>
+      <!-- end of ionic header bar -->
+
+      <ion-content>
+        <img class="cover-img" src="img/facebook_cover.jpg"/>
+
+        <div class="row">
+          <div class="col">
+            <img class="logo-img" src="img/facebook_logo.png"/>
+          </div>
+          <div class="col col-75">
+            <b>Facebook</b><br />
+            Facebook<br />
+            Social
+          </div>
+        </div>
+      </ion-content>
+    </ion-view>

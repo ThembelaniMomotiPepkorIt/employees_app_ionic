@@ -20,7 +20,7 @@ angular.module('starter.routes', ['ionic'])
 		.state('main.dash',{
 			url : 'main/dash',
 			views : {
-				'dash-tab' : {
+				'mainContent' : {
 					templateUrl : 'templates/dashboard.html',
 					controller : 'DashCtrl'
 				}
@@ -30,13 +30,24 @@ angular.module('starter.routes', ['ionic'])
 		.state('main.emps', {
 			url: 'main/emps', 
 			views : {
-				'dash-tab' : {
+				'mainContent' : {
 					templateUrl : 'templates/employees.html',
-					controller : 'EmpCtrl'
+					controller : 'EmpsCtrl'
 				}
 			}
 			
-		});
+		})
+		.state('main.profile', {
+			url: 'main/profile', 
+			views : {
+				'mainContent' : {
+					templateUrl : 'templates/profile.html',
+					controller : 'ProfileCtrl'
+
+				}
+			}
+		})
+		;
 
 
 });

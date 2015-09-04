@@ -8,15 +8,34 @@ angular.module('starter.controllers', ['ionic', 'starter.services'])
 	console.log('DashCtrl');
 })
 
-.controller('EmpCtrl', function($scope, EmpService){
-	var employees;
+.controller('EmpsCtrl', function($scope, empService){
 	console.log('EmpCtrl');
-
-	console.log(EmpService.getEmps());
+	var employees = {};
 	
-	EmpService.getEmps().then(function(data){
-		employees = data;
+	empService.getEmps()
+		.then(function(data){
+				employees = data;
+				console.log(employees);	
+				$scope.employees = employees;
+	}, function(error){
+		console.log(error.status+' '+ error.statusText);
+		throw error;
 	});
-	console.log(employees);
+
 	
-	})
+})
+
+.controller('ProfileCtrl', function($scope, empService){
+	console.log('ProfileCtrl');
+	var profile = {};
+	
+	empService.getEmp()
+		.then(function(data){
+				profile = data;
+				console.log(profile);	
+				$scope.profile = profile;
+	}, function(error){
+		console.log(error.status+' '+ error.statusText);
+		throw error;
+	});
+})
